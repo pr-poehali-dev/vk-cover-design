@@ -1,11 +1,5 @@
 import Icon from "@/components/ui/icon";
 
-const reviews = [
-  { name: "Анна К.", text: "Наконец-то нашла своего стилиста! Образ собран идеально ✨", rating: 5 },
-  { name: "Мария Д.", text: "Бренд, который я ношу с гордостью. Рекомендую всем!", rating: 5 },
-  { name: "Елена С.", text: "Качество на высоте, сервис безупречный 💎", rating: 5 },
-];
-
 const Index = () => {
   return (
     <div className="min-h-screen bg-[#f5f0ea] flex items-center justify-center p-4">
@@ -20,108 +14,82 @@ const Index = () => {
           }}
         />
 
-        <div className="absolute inset-0 bg-gradient-to-r from-[#2a1f14]/90 via-[#2a1f14]/60 to-transparent" />
-        <div className="absolute inset-0 bg-gradient-to-t from-[#2a1f14]/40 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-r from-[#2a1f14]/85 via-[#2a1f14]/50 to-[#2a1f14]/30" />
 
-        <div className="absolute top-0 left-0 w-1 h-full bg-gradient-to-b from-transparent via-[#d4a853] to-transparent" />
-        <div className="absolute top-0 right-0 w-1 h-full bg-gradient-to-b from-transparent via-[#d4a853] to-transparent" />
-        <div className="absolute top-0 left-0 h-1 w-full bg-gradient-to-r from-transparent via-[#d4a853] to-transparent" />
-        <div className="absolute bottom-0 left-0 h-1 w-full bg-gradient-to-r from-transparent via-[#d4a853] to-transparent" />
+        <div className="absolute top-0 left-0 w-[3px] h-full bg-gradient-to-b from-transparent via-[#d4a853] to-transparent" />
+        <div className="absolute top-0 right-0 w-[3px] h-full bg-gradient-to-b from-transparent via-[#d4a853] to-transparent" />
+        <div className="absolute top-0 left-0 h-[3px] w-full bg-gradient-to-r from-transparent via-[#d4a853] to-transparent" />
+        <div className="absolute bottom-0 left-0 h-[3px] w-full bg-gradient-to-r from-transparent via-[#d4a853] to-transparent" />
 
-        <div className="relative z-10 h-full flex">
-          <div className="flex flex-col justify-center pl-[5%] pr-8 max-w-[55%]">
-            <div className="flex items-center gap-3 mb-3">
-              <div className="w-12 h-[2px] bg-[#d4a853]" />
-              <span className="font-heading text-[#d4a853] text-sm tracking-[0.3em] uppercase font-semibold">
-                Premium Quality
-              </span>
-            </div>
+        <div className="relative z-10 h-full flex flex-col items-center justify-center text-center px-8">
+          <h1 className="font-heading text-white leading-[0.9] mb-6">
+            <span className="block text-[80px] font-black tracking-tight drop-shadow-lg">ХОЧУ</span>
+            <span
+              className="block text-[120px] font-black tracking-tight drop-shadow-lg"
+              style={{
+                background: "linear-gradient(135deg, #d4a853 0%, #f5d799 40%, #d4a853 60%, #f5d799 100%)",
+                backgroundSize: "200% auto",
+                WebkitBackgroundClip: "text",
+                WebkitTextFillColor: "transparent",
+                animation: "shimmer 3s linear infinite",
+              }}
+            >
+              БРЕНД
+            </span>
+          </h1>
 
-            <h1 className="font-heading text-white leading-none mb-2">
-              <span className="block text-[64px] font-black tracking-tight">ХОЧУ</span>
-              <span
-                className="block text-[88px] font-black tracking-tight"
-                style={{
-                  background: "linear-gradient(135deg, #d4a853, #f5d799, #d4a853)",
-                  WebkitBackgroundClip: "text",
-                  WebkitTextFillColor: "transparent",
-                }}
-              >
-                БРЕНД
-              </span>
-            </h1>
+          <div className="w-24 h-[2px] bg-gradient-to-r from-transparent via-[#d4a853] to-transparent mb-5" />
 
-            <div className="flex items-center gap-2 mt-2 mb-5">
+          <p className="font-heading text-white/90 text-2xl tracking-[0.15em] uppercase font-semibold mb-4 drop-shadow-md">
+            Оригинальные товары из США
+          </p>
+
+          <div className="flex items-center gap-3">
+            <div className="flex items-center gap-1">
               {[1, 2, 3, 4, 5].map((star) => (
-                <Icon key={star} name="Star" size={22} className="text-[#d4a853] fill-[#d4a853]" />
-              ))}
-              <span className="text-white/80 font-heading text-sm ml-2 tracking-wide">
-                500+ довольных клиентов
-              </span>
-            </div>
-
-            <p className="font-elegant text-white/70 text-xl italic leading-relaxed max-w-[420px]">
-              Реальные отзывы от реальных людей — нас выбирают за качество и стиль
-            </p>
-          </div>
-
-          <div className="flex-1 flex items-center justify-center pr-[4%]">
-            <div className="flex flex-col gap-4 w-full max-w-[420px]">
-              {reviews.map((review, i) => (
-                <div
-                  key={i}
-                  className="relative bg-white/10 backdrop-blur-md rounded-xl px-6 py-4 border border-[#d4a853]/30"
-                  style={{
-                    transform: `translateX(${i * 12}px)`,
-                  }}
-                >
-                  <div className="absolute -top-2 -left-2 w-8 h-8 rounded-full bg-[#d4a853] flex items-center justify-center shadow-lg">
-                    <Icon name="Quote" size={14} className="text-[#2a1f14]" />
-                  </div>
-
-                  <div className="flex items-center gap-1 mb-1">
-                    {Array.from({ length: review.rating }).map((_, j) => (
-                      <Icon key={j} name="Star" size={12} className="text-[#d4a853] fill-[#d4a853]" />
-                    ))}
-                  </div>
-                  <p className="text-white/90 font-elegant text-base italic leading-snug">
-                    «{review.text}»
-                  </p>
-                  <p className="text-[#d4a853] font-heading text-xs mt-2 tracking-wider uppercase font-semibold">
-                    — {review.name}
-                  </p>
-                </div>
+                <Icon key={star} name="Star" size={20} className="text-[#d4a853] fill-[#d4a853]" />
               ))}
             </div>
-          </div>
-        </div>
-
-        <div className="absolute bottom-5 left-[5%] flex items-center gap-4">
-          <div className="flex items-center gap-2 bg-[#d4a853] rounded-full px-5 py-2 shadow-lg shadow-[#d4a853]/30">
-            <Icon name="MessageCircle" size={16} className="text-[#2a1f14]" />
-            <span className="font-heading text-[#2a1f14] text-xs font-bold tracking-wider uppercase">
-              Оставить отзыв
+            <span className="text-white/70 font-heading text-sm tracking-wide">
+              500+ довольных клиентов
             </span>
           </div>
+
+          <p className="font-elegant text-white/60 text-xl italic mt-4 max-w-[600px]">
+            Доставляем бренды, о которых вы мечтали
+          </p>
+        </div>
+
+        <div className="absolute top-6 left-8 flex items-center gap-2">
+          <Icon name="Crown" size={20} className="text-[#d4a853]" />
+        </div>
+
+        <div className="absolute top-6 right-8 flex items-center gap-2">
+          <Icon name="ShoppingBag" size={18} className="text-[#d4a853]/60" />
+          <Icon name="Plane" size={18} className="text-[#d4a853]/60" />
+          <Icon name="Package" size={18} className="text-[#d4a853]/60" />
+        </div>
+
+        <div className="absolute bottom-5 left-1/2 -translate-x-1/2 flex items-center gap-6">
           <div className="flex items-center gap-2">
-            <Icon name="Shield" size={14} className="text-[#d4a853]" />
-            <span className="text-white/50 font-heading text-xs tracking-wider">
-              Проверенные отзывы
+            <Icon name="Truck" size={16} className="text-[#d4a853]/50" />
+            <span className="text-white/40 font-heading text-[11px] tracking-[0.2em] uppercase">
+              Доставка по РФ
             </span>
           </div>
-        </div>
-
-        <div className="absolute top-5 right-[4%] flex items-center gap-2 opacity-60">
-          <Icon name="Crown" size={18} className="text-[#d4a853]" />
-          <span className="font-heading text-[#d4a853] text-xs tracking-[0.2em] uppercase font-semibold">
-            Est. 2024
-          </span>
+          <div className="w-1 h-1 rounded-full bg-[#d4a853]/30" />
+          <div className="flex items-center gap-2">
+            <Icon name="Shield" size={16} className="text-[#d4a853]/50" />
+            <span className="text-white/40 font-heading text-[11px] tracking-[0.2em] uppercase">
+              100% оригинал
+            </span>
+          </div>
         </div>
       </div>
 
       <style>{`
         @keyframes shimmer {
-          0% { background-position: -200% center; }
+          0% { background-position: 0% center; }
           100% { background-position: 200% center; }
         }
       `}</style>
